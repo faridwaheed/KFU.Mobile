@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:markupExtensions="clr-namespace:KFU.Mobile.MarkupExtensions;assembly=KFU.Mobile"
+             x:Class="KFU.Mobile.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Grid  Opacity="0.95" Padding="10" Margin="0,40,0,0" x:Name="loginGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Source="logo.png" HeightRequest="150" WidthRequest="150"/>
+
+                <Image StyleClass="RoundedBody" Grid.Row="1" Grid.Column="1" Source="{markupExtensions:ImageSource EmailIcon}" />
+                <Entry Grid.Row="1" Grid.Column="0" Placeholder="البريد الالكترونى" Text="{Binding Email}" Keyboard="Email" HorizontalTextAlignment="Start"/>
+
+                <Label x:Name="Email" Grid.Row="2" Grid.ColumnSpan="2" HorizontalTextAlignment="End" Text="يرجى ادخال بريد الكترونى" TextColor="Red" IsVisible="False" />
+
+
+                <Image Source="{markupExtensions:ImageSource PasswordIcon}" StyleClass="RoundedBody" Grid.Row="3" Grid.Column="1" />
+                <Entry Grid.Row="3" Grid.Column="0" Placeholder="كلمة المرور" Text="{Binding Password}" IsPassword="True" Keyboard="Text" HorizontalTextAlignment="End" />
+                <Label x:Name="Password" Grid.Row="4" Grid.ColumnSpan="2" HorizontalTextAlignment="End" Text="يرجى ادخال كلمة المرور" TextColor="Red" IsVisible="False" />
+
+                <!--<custom:RoundedButton Grid.Column="0"  Text="تسجيل الدخول" Grid.Row="5" Grid.ColumnSpan="2" Command="{Binding LoginUserCommand}" />-->
+
+                <Button Grid.Column="0" BorderRadius="15" HeightRequest="60" BorderWidth="10" Text="تسجيل الدخول" Grid.Row="5" Grid.ColumnSpan="2" Command="{Binding LoginUserCommand}" BackgroundColor="DarkGray" TextColor="Black"/>
+            </Grid>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
