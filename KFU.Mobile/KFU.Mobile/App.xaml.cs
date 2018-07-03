@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using KFU.Mobile.Views;
 using Xamarin.Forms;
 
 namespace KFU.Mobile
@@ -13,7 +13,7 @@ namespace KFU.Mobile
 		{
 			InitializeComponent();
 
-			MainPage = new KFU.Mobile.MainPage();
+			MainPage = new SchoolSchedulePage();
 		}
 
 		protected override void OnStart ()
