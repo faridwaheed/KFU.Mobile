@@ -3,9 +3,92 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KFU.Mobile.Views.SchoolSchedulePage">
     <ContentPage.Content>
-        <ScrollView Orientation="Horizontal">
-            <StackLayout Spacing="0" Margin="0,100,0,0">
-                <Grid>
+
+        <StackLayout Margin="10,20">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"
+                             Padding="3">
+
+                <Frame OutlineColor="Black"
+                            BackgroundColor="Gray"
+                            HeightRequest="20"
+                            WidthRequest="120"
+                           CornerRadius="30">
+                    <!--<Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single"
+                                        iOS="20" 
+                                        Android="35"/>
+                        </Frame.CornerRadius>-->
+                    <Label Text="عمادة السنة التحضيرية"
+                           FontFamily="Bold" 
+                           FontSize="12"
+                           HorizontalTextAlignment="Center"/>
+
+                </Frame>
+
+                <Button Image="logo"
+                        HeightRequest="5"
+                        WidthRequest="70"
+                        BorderRadius="70">
+                    <!--<Button.BorderRadius>
+                        <OnPlatform x:TypeArguments="x:Int32"
+                                iOS="15" Android="20" />
+                    </Button.BorderRadius>-->
+                </Button>
+
+            </StackLayout>
+
+            <StackLayout>
+                <!-- Numbers and date-->
+                <StackLayout Orientation="Horizontal"
+                            Margin="20,20"
+                            HorizontalOptions="FillAndExpand">
+                    <Label Text="2018/07/04"
+                        FontSize="15"
+                        TextColor="Black"/>
+
+                    <Label  Text="التاريخ :"
+                        FontSize="12"
+                        TextColor="Black" />
+
+                    <Label Text="" />
+
+                    <Label Text="219000"
+                        FontSize="15"
+                        TextColor="Black" />
+
+                    <Label  Text="الرقم الجامعي :"
+                        FontSize="12"
+                        TextColor="Black" />
+                </StackLayout>
+
+                <!-- name and specialest-->
+                <StackLayout Orientation="Horizontal"
+                            Margin="20,-20"
+                            HorizontalOptions="FillAndExpand">
+                    <Label Text="ITI" x:Name="specialestLbl"
+                        FontSize="15"
+                        TextColor="Black" />
+
+                    <Label Text="التخصص :"
+                        FontSize="12"
+                        TextColor="Black" />
+
+                    <Label Text="" />
+
+                    <Label Text="Ahmed Hassan" x:Name="studentNameLbl"
+                        FontSize="15"
+                        TextColor="Black" />
+
+                    <Label Text="اسم الطالب :"
+                        FontSize="12"
+                        TextColor="Black" />
+                </StackLayout>
+            </StackLayout>
+
+
+            <ScrollView Orientation="Horizontal">
+                <StackLayout Spacing="0" Margin="0,40,0,0">
+                    <!--<Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -34,83 +117,179 @@
                     <Label Grid.Row="2" Grid.Column="1" Text=" التخصص" TextColor="Black" FontSize="10"/>
                     <Label Grid.Row="2" Grid.Column="0"  Text="ITI" TextColor="Black" FontSize="12"/>
 
-                </Grid>
+                </Grid>-->
 
-                <Grid Margin="0" Padding="0" RowSpacing="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1"/>
-                        <RowDefinition Height="34"/>
-                        <RowDefinition Height="1"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="1"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="1"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="1"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="1"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="1"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="1"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="1"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                    <Grid Margin="0" Padding="0" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Color="Blue"/>
-                    <Label Text="اليوم" TextColor="Black" Grid.Column="1" Grid.Row="1"/>
-                    <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
-                    <Label Text="التاريخ الهجرى" TextColor="Black" Grid.Column="3" Grid.Row="1"/>
-                    <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="4" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
-                    <Label Text="التاريخ الميلادى" TextColor="Black" Grid.Column="5" Grid.Row="1"/>
-                    <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="6" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
-                    <Label Text="المقرر الدراسى" TextColor="Black" Grid.Column="7" Grid.Row="1"/>
-                    <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="8" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
-                    <Label Text="اسم الاختبار" TextColor="Black" Grid.Column="9" Grid.Row="1"/>
-                    <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="10" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
-                    <Label Text="الوقت" TextColor="Black" Grid.Column="11" Grid.Row="1"/>
-                    <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="12" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
-                    <Label Text="القاعه" TextColor="Black" Grid.Column="13" Grid.Row="1"/>
-                    <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="14" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
-                    <Label Text="المبنى" TextColor="Black" Grid.Column="15" Grid.Row="1"/>
+                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Color="Blue"/>
+                        <Label Text="المبنى" TextColor="Black" Grid.Column="1" Grid.Row="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                        <Label Text="القاعه" TextColor="Black" Grid.Column="3" Grid.Row="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="4" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                        <Label Text="الوقت" TextColor="Black" Grid.Column="5" Grid.Row="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="6" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                        <Label Text="اسم الاختبار" TextColor="Black" Grid.Column="7" Grid.Row="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="8" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                        <Label Text="المقرر الدراسى" TextColor="Black" Grid.Column="9" Grid.Row="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="10" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                        <Label Text="التاريخ الميلادى" TextColor="Black" Grid.Column="11" Grid.Row="1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="12" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                        <Label Text="التاريخ الهجرى" TextColor="Black" Grid.Column="13" Grid.Row="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="14" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                        <Label Text="اليوم" TextColor="Black" Grid.Column="15" Grid.Row="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
 
-                    <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="16" Color="Blue"/>
-                </Grid>
-                <ListView x:Name="BuildingList" RowHeight="20" HeightRequest="20">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Margin="0" Padding="0" Spacing="0" >
-                                    <Grid Margin="0"  Padding="0" RowSpacing="0">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="1"/>
-                                            <RowDefinition Height="34"/>
-                                            <RowDefinition Height="1"/>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="1"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="1"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="1"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="1"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="1"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="1"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="1"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="1"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
+                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="16" Color="Blue"/>
+                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="16" Color="Blue"/>
+                    </Grid>
 
-                                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" Color="Blue"/>
+                    <ListView x:Name="BuildingList" 
+                              VerticalOptions="FillAndExpand"
+                              HasUnevenRows="true"><!--RowHeight="20" HeightRequest="20"-->
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <StackLayout Margin="0" Padding="0" Spacing="0" >
+                                        <Grid Margin="0"  Padding="0" RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height="34"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <BoxView WidthRequest="1" 
+                                                 HeightRequest="20" 
+                                                 Grid.Column="0" 
+                                                 Grid.Row="0" 
+                                                 Grid.RowSpan="3" 
+                                                 Color="Blue"/>
+                                            <Label Text="المبني"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   TextColor="Black"
+                                                   Grid.Column="1"
+                                                   Grid.Row="1"/>
+                                            <BoxView WidthRequest="1"
+                                                 HeightRequest="20"
+                                                 Grid.Column="2"
+                                                 Grid.Row="0" 
+                                                 Grid.RowSpan="3" 
+                                                 Color="Blue"/>
+                                            <Label Text="القاعه"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   TextColor="Black"
+                                                   Grid.Column="3"
+                                                   Grid.Row="1"/>
+                                            <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="4" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                                            <Label Text="الوقت"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   TextColor="Black"
+                                                   Grid.Column="5"
+                                                   Grid.Row="1"/>
+                                            <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="6" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                                            <Label Text="اسم الاختبار"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   TextColor="Black"
+                                                   Grid.Column="7" 
+                                                   Grid.Row="1"/>
+                                            <BoxView WidthRequest="1" 
+                                                    HeightRequest="20"
+                                                    Grid.Column="8" 
+                                                    Grid.Row="0" 
+                                                    Grid.RowSpan="3"  
+                                                    Color="Blue"/>
+                                            <Label Text="المقرر الدراسى" 
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   TextColor="Black" 
+                                                   Grid.Column="9"
+                                                   Grid.Row="1"/>
+                                            <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="10" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                                            <Label Text="التاريخ الميلادى"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   TextColor="Black" 
+                                                   Grid.Column="11"
+                                                   Grid.Row="1"/>
+                                            <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="12" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                                            <Label Text="التاريخ الهجرى" 
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   TextColor="Black"
+                                                   Grid.Column="13"
+                                                   Grid.Row="1"/>
+                                            <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="14" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
+                                            <Label Text="اليوم" 
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   TextColor="Black" 
+                                                   Grid.Column="15"
+                                                   Grid.Row="1"/>
+
+                                            <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="16" Color="Blue"/>
+                                            <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="16" Color="Blue"/>
+
+                                            <!--<BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" Color="Blue"/>
                                         <Label Text="{Binding Name}" TextColor="Black" Grid.Column="1" Grid.Row="1"/>
                                         <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3"  Color="Blue"/>
                                         <Label Text="التاريخ الهجرى" TextColor="Black" Grid.Column="3" Grid.Row="1"/>
@@ -128,16 +307,18 @@
                                         <Label Text="المبنى" TextColor="Black" Grid.Column="15" Grid.Row="1"/>
 
                                         <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="16" Color="Blue"/>
-                                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="16" Color="Blue"/>
-                                    </Grid>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                                        <BoxView WidthRequest="1" HeightRequest="20" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="16" Color="Blue"/>-->
+                                        </Grid>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
 
 
-            </StackLayout>
-        </ScrollView>
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

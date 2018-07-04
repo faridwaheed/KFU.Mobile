@@ -63,9 +63,9 @@ namespace KFU.Mobile.Resources.Regex {
         /// <summary>
         ///   Looks up a localized string similar to ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$.
         /// </summary>
-        internal static string Email {
+        internal static string UserId {
             get {
-                return ResourceManager.GetString("Email", resourceCulture);
+                return ResourceManager.GetString("UserId", resourceCulture);
             }
         }
         

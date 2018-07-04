@@ -15,10 +15,10 @@ namespace KFU.Mobile.ViewModels
    public class LoginPageViewModel : ViewModelBase, IValidatableViewModel
     {
 
-            private string _email;
+            private string _userId;
             private string _password;
 
-            public LoginPageViewModel(View mainContainer) : base(mainContainer)
+            public LoginPageViewModel()
             {
 
                 LoginUserCommand = new Command(Login, () => !IsBusy);
@@ -28,17 +28,11 @@ namespace KFU.Mobile.ViewModels
                 ConfigureValidationRules();
             }
 
-            // Islam 
-            public bool ReturnToReservePlayground { get; set; }
 
-            public string AccessCode { get; set; }
-
-
-            public string Email
+            public string UserId
             {
-                get { return _email; }
-                set { SetValue(ref _email, value); }
-                //SetValue(await AccountService.Login.Email;)
+                get { return _userId; }
+                set { SetValue(ref _userId, value); }
             }
 
             public string Password
@@ -50,35 +44,32 @@ namespace KFU.Mobile.ViewModels
                 }
             }
            
-
-            // make email in login and logout 
             public Command LoginUserCommand { get; }
             private async void Login()
             {
-                //IsBusy = true;
                 await App.Current.MainPage.Navigation.PushPopupAsync(new LoadingPopup());
                 var validationRes = _validator.Validate<LoginPageViewModel>(this);
-                if (validationRes)
-                {
-                    var serviceResult = await AccountService.Login(this);
-                    if (serviceResult == ResponseResults.LoginUserResult.Failed.ToString())
-                        await Application.Current.MainPage.DisplayAlert("عفوا", "البريد الإلكتروني او كلمة السر غير صحيحة", "اغلق");
-                    else if (serviceResult == ResponseResults.LoginUserResult.InActive.ToString())
-                        await Application.Current.MainPage.DisplayAlert("عفوا", "هذا البريد غير مفعل الان برجـاء مراجـعة الادمن", "اغلق");
-                    else if (serviceResult == ResponseResults.LoginUserResult.Bokcked.ToString())
-                        await Application.Current.MainPage.DisplayAlert("عفوا", "تم تعطيل هذا الحساب لعدم التزامه بحضور الحجوزات", "اغلق");
-                    else
-                    {
-                        //UserDAL dal = new UserDAL();
-                        //dal.DeleteAll();
-                        //var loginResult = JsonConvert.DeserializeObject<LoginResultViewModel>(serviceResult);
-                        //dal.AddUser(loginResult);
+                //if (validationRes)
+                //{
+                    var serviceResult = await ApiService.Login(UserId,Password);
+                    //if (serviceResult == ResponseResults.LoginUserResult.Failed.ToString())
+                    //    await Application.Current.MainPage.DisplayAlert("عفوا", "البريد الإلكتروني او كلمة السر غير صحيحة", "اغلق");
+                    //else if (serviceResult == ResponseResults.LoginUserResult.InActive.ToString())
+                    //    await Application.Current.MainPage.DisplayAlert("عفوا", "هذا البريد غير مفعل الان برجـاء مراجـعة الادمن", "اغلق");
+                    //else if (serviceResult == ResponseResults.LoginUserResult.Bokcked.ToString())
+                    //    await Application.Current.MainPage.DisplayAlert("عفوا", "تم تعطيل هذا الحساب لعدم التزامه بحضور الحجوزات", "اغلق");
+                //    else
+                //    {
+                //        //UserDAL dal = new UserDAL();
+                //        //dal.DeleteAll();
+                //        //var loginResult = JsonConvert.DeserializeObject<LoginResultViewModel>(serviceResult);
+                //        //dal.AddUser(loginResult);
 
-                        if (ReturnToReservePlayground)
-                            await Application.Current.MainPage.Navigation.PopModalAsync();
+                //        if (ReturnToReservePlayground)
+                //            await Application.Current.MainPage.Navigation.PopModalAsync();
                         
-                    }
-                }
+                //    }
+                //}
                 await App.Current.MainPage.Navigation.PopPopupAsync(true);
                 //IsBusy = false;
             }
@@ -117,8 +108,8 @@ namespace KFU.Mobile.ViewModels
 
             public void ConfigureValidationRules()
             {
-                _validator.AddRule("Email", RegexResource.Email);
-                _validator.AddRule("Password", RegexResource.Required);
+                //_validator.AddRule("Email", RegexResource.UserId);
+                //_validator.AddRule("Password", RegexResource.Required);
             }
 
         }

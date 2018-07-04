@@ -21,9 +21,9 @@
                 <Image Grid.Row="0" Source="logo.png" HeightRequest="150" WidthRequest="150"/>
 
                 <Image StyleClass="RoundedBody" Grid.Row="1" Grid.Column="1" Source="{markupExtensions:ImageSource EmailIcon}" />
-                <Entry Grid.Row="1" Grid.Column="0" Placeholder="البريد الالكترونى" Text="{Binding Email}" Keyboard="Email" HorizontalTextAlignment="Start"/>
+                <Entry Grid.Row="1" Grid.Column="0" Placeholder="رقم المستخدم" Text="{Binding UserId}" Keyboard="Email" HorizontalTextAlignment="Start"/>
 
-                <Label x:Name="Email" Grid.Row="2" Grid.ColumnSpan="2" HorizontalTextAlignment="End" Text="يرجى ادخال بريد الكترونى" TextColor="Red" IsVisible="False" />
+                <Label x:Name="Email" Grid.Row="2" Grid.ColumnSpan="2" HorizontalTextAlignment="End" Text="يرجى ادخال رقم المستخدم" TextColor="Red" IsVisible="False" />
 
 
                 <Image Source="{markupExtensions:ImageSource PasswordIcon}" StyleClass="RoundedBody" Grid.Row="3" Grid.Column="1" />
