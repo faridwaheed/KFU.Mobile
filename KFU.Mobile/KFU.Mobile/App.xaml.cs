@@ -13,7 +13,7 @@ namespace KFU.Mobile
 		{
 			InitializeComponent();
 
-			MainPage = new SchoolSchedulePage();
+			MainPage = new LoginPage();
 		}
 
 		protected override void OnStart ()

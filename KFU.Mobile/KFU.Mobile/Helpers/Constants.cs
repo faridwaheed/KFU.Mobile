@@ -10,7 +10,7 @@ namespace KFU.Mobile.Helpers
    public static class Constants
     {
 
-        public static string WebURL = "";
+        public static string WebURL = "https://pybanner.kfu.edu.sa/pybanner2014/KfuApi/";
         public static string DatabaseName = "";
         public static string AccessCode = "13ASF8F4WZA";
         public static string OwnerUploadingDirectory = "Content/uploads/Files/";
